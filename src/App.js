@@ -25,6 +25,12 @@ class App extends Component {
     "diameter":0,
     "spicinest_scale":0,
     "slices_of_bread":0,
+      "selected":"true"
+  }
+
+  toggle = (event) => {
+      return
+
   }
 
 handleChange = (event) => {
@@ -33,6 +39,7 @@ handleChange = (event) => {
           formError:null
       })
 }
+
   render(){
     return (
         <div>
@@ -71,12 +78,15 @@ handleChange = (event) => {
               <br />
               {/*<AdditionalProperties />*/}
 
-              <select name="type" onChange={this.handleChange}>
+              <select name="type" onChange={this.handleChange} required>
                   <option value="pizza">Pizza</option>
-                  <option value="soup">Soup</option>
-                  <option value="sandwich">Sandwich</option>
+                  <option onClick={this.toggle} value="soup">Soup</option>
+                  <option selected value="sandwich">Sandwich</option>
               </select>
-
+<br/>
+              <br/>
+              <input className="hidden" type="range" name="spicynest" value={this.state.spicinest_scale} placeholder="ostrość" required/>
+<br/>
               <button type="submit">Dodaj danie</button>
           </form>
         </div>
