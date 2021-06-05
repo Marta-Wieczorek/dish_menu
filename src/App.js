@@ -1,16 +1,15 @@
 import React, {Component} from "react";
 import './App.css';
 
-// const typ = document.getElementById("1");
-//
+
 // function AdditionalProperties(){
-//     if (typ.value == "pizza") {
+//     if (this.state.type.id == "pizza") {
 //         return
 //         <input type="number" name="no_of_slices" value={this.state.no_of_slices} placeholder="ilość kawałków" required/>;
-//     } if (typ.value == "soup" ){
+//     } if (this.state.type.id == "soup" ){
 //         return
 //         <input type="range" name="spicynest" value={this.state.spicinest_scale} placeholder="ostrość" required/>;
-//     }if (typ.value == "sandwich" ){
+//     }if (this.state.type.id == "sandwich" ){
 //         return
 //         <input type="number" name="slices_of_bread" value={this.state.slices_of_bread} placeholder="ilość kromek"/>;
 //     }
@@ -28,7 +27,12 @@ class App extends Component {
     "slices_of_bread":0,
   }
 
-
+handleChange = (event) => {
+      this.setState({
+          [event.target.name]:event.target.value,
+          formError:null
+      })
+}
   render(){
     return (
         <div>
@@ -40,6 +44,7 @@ class App extends Component {
               type="text"
               name="name"
               value={this.state.name}
+              onChange={this.handleChange}
               placeholder="Wpisz nazwę dania"
               required
           />
@@ -49,21 +54,28 @@ class App extends Component {
                   type="number"
                   name="preparation_time"
                   value={this.state.preparation_time}
+                  onChange={this.handleChange}
                   placeholder="0"
                   required
                   />
               <br />
               <br /><label htmlFor="type">Typ dania</label><br />
 
-                  <input type="radio" id="1" name="type" value="pizza"/>
+                  <input type="radio" id="pizza" name="type" value={this.state.type} onChange={this.handleChange} checked required/>
                   <label htmlFor="pizza">Pizza</label><br/>
-                  <input type="radio" id="1" name="type" value="soup"/>
+                  <input type="radio" id="soup" name="type" value={this.state.type} onChange={this.handleChange}/>
                   <label htmlFor="soup">Soup</label><br/>
-                  <input type="radio" id="1" name="type" value="sandwich"/>
+                  <input type="radio" id="sandwich" name="type" value={this.state.type} onChange={this.handleChange}/>
                   <label htmlFor="sandwich">Sandwich</label>
               <br />
               <br />
               {/*<AdditionalProperties />*/}
+
+              <select name="type" onChange={this.handleChange}>
+                  <option value="pizza">Pizza</option>
+                  <option value="soup">Soup</option>
+                  <option value="sandwich">Sandwich</option>
+              </select>
 
               <button type="submit">Dodaj danie</button>
           </form>
