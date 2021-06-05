@@ -40,8 +40,8 @@ handleChange = (event) => {
 
   render(){
     return (
-        <div>
-          <h2>Kreator MENU</h2>
+        <div className="myStyle">
+          <h2 className="App-header">Kreator MENU</h2>
 
           <form>
             <label htmlFor="name">Nazwa dania:</label><br />
