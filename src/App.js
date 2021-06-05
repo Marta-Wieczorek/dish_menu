@@ -1,16 +1,33 @@
 import React, {Component} from "react";
 import './App.css';
 
-class App extends Component {
+// const typ = document.getElementById("1");
+//
+// function AdditionalProperties(){
+//     if (typ.value == "pizza") {
+//         return
+//         <input type="number" name="no_of_slices" value={this.state.no_of_slices} placeholder="ilość kawałków" required/>;
+//     } if (typ.value == "soup" ){
+//         return
+//         <input type="range" name="spicynest" value={this.state.spicinest_scale} placeholder="ostrość" required/>;
+//     }if (typ.value == "sandwich" ){
+//         return
+//         <input type="number" name="slices_of_bread" value={this.state.slices_of_bread} placeholder="ilość kromek"/>;
+//     }
+// }
 
+
+class App extends Component {
   state={
-    "diameter": 0,
-    "name": "wpisz nazwę dania",
+    "name": "",
     "no_of_slices": 0,
     "preparation_time": 0,
-    "type": "typ dania",
-    "id":1,
+    "type": "",
+    "diameter":0,
+    "spicinest_scale":0,
+    "slices_of_bread":0,
   }
+
 
   render(){
     return (
@@ -37,16 +54,16 @@ class App extends Component {
                   />
               <br />
               <br /><label htmlFor="type">Typ dania</label><br />
-              <select
-                  name="type"
-                  required>
-                  <option value="pizza">Pizza</option>
-                  <option value="soup">Soup</option>
-                  <option value="sandwich">Sandwich</option>
-              </select>
-              <br />
-              <br />
 
+                  <input type="radio" id="1" name="type" value="pizza"/>
+                  <label htmlFor="pizza">Pizza</label><br/>
+                  <input type="radio" id="1" name="type" value="soup"/>
+                  <label htmlFor="soup">Soup</label><br/>
+                  <input type="radio" id="1" name="type" value="sandwich"/>
+                  <label htmlFor="sandwich">Sandwich</label>
+              <br />
+              <br />
+              {/*<AdditionalProperties />*/}
 
               <button type="submit">Dodaj danie</button>
           </form>
@@ -55,6 +72,8 @@ class App extends Component {
   }
 
 }
+
+
 
 
 export default App;
