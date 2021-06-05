@@ -2,20 +2,6 @@ import React, {Component} from "react";
 import './App.css';
 
 
-// function AdditionalProperties(){
-//     if (this.state.type.id == "pizza") {
-//         return
-//         <input type="number" name="no_of_slices" value={this.state.no_of_slices} placeholder="ilość kawałków" required/>;
-//     } if (this.state.type.id == "soup" ){
-//         return
-//         <input type="range" name="spicynest" value={this.state.spicinest_scale} placeholder="ostrość" required/>;
-//     }if (this.state.type.id == "sandwich" ){
-//         return
-//         <input type="number" name="slices_of_bread" value={this.state.slices_of_bread} placeholder="ilość kromek"/>;
-//     }
-// }
-
-
 class App extends Component {
   state={
     "name": "",
@@ -29,8 +15,8 @@ class App extends Component {
   }
 
   toggle = (event) => {
-      return
-
+      var element = document.getElementById("mySOUP");
+      element.classList.toggle("hidden");
   }
 
 handleChange = (event) => {
@@ -66,17 +52,9 @@ handleChange = (event) => {
                   required
                   />
               <br />
-              <br /><label htmlFor="type">Typ dania</label><br />
-
-                  <input type="radio" id="pizza" name="type" value={this.state.type} onChange={this.handleChange} checked required/>
-                  <label htmlFor="pizza">Pizza</label><br/>
-                  <input type="radio" id="soup" name="type" value={this.state.type} onChange={this.handleChange}/>
-                  <label htmlFor="soup">Soup</label><br/>
-                  <input type="radio" id="sandwich" name="type" value={this.state.type} onChange={this.handleChange}/>
-                  <label htmlFor="sandwich">Sandwich</label>
               <br />
               <br />
-              {/*<AdditionalProperties />*/}
+              <br />
 
               <select name="type" onChange={this.handleChange} required>
                   <option value="pizza">Pizza</option>
@@ -85,8 +63,12 @@ handleChange = (event) => {
               </select>
 <br/>
               <br/>
-              <input className="hidden" type="range" name="spicynest" value={this.state.spicinest_scale} placeholder="ostrość" required/>
-<br/>
+              <input id="mySOUP" className="hidden" type="range" name="spicynest" value={this.state.spicinest_scale} placeholder="ostrość" required/>
+<br/>         <input id="mySANDWICH" className="hidden" type="number" name="slices_of_bread" value={this.state.slices_of_bread} placeholder="ilość kromek"/>
+              <br/>
+              <input id="myPIZZA" className="hidden" type="number" name="no_of_slices" value={this.state.no_of_slices} placeholder="ilość kawałków" required/>
+              <br/>
+
               <button type="submit">Dodaj danie</button>
           </form>
         </div>
