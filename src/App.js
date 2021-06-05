@@ -11,6 +11,15 @@ class App extends Component {
     "type": "typ dania",
     "id":1,
   }
+
+  render(){
+    return (
+        <div>
+          <h2>Kreator MENU</h2>
+        </div>
+    )
+  }
+
 }
 
 
