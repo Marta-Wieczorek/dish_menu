@@ -56,8 +56,9 @@ handleChange = (event) => {
             <br />
             <br /><label htmlFor="preparation_time">Czas przygotowania:</label> <br />
               <input
-                  type="number"
+                  type="time"
                   name="preparation_time"
+                  step="2"
                   value={this.state.preparation_time}
                   onChange={this.handleChange}
                   placeholder="0"
@@ -75,12 +76,15 @@ handleChange = (event) => {
               </select>
 <br/>
               <br/>
-              <input id="mySOUP" className="hidden" type="range" name="spicynest" value={this.state.spicinest_scale} placeholder="ostrość" onChange={this.handleChange}/>
+              <input id="mySOUP" className="hidden" type="number" min="0" max="10" step="1" name="spicinest_scale" value={this.state.spicinest_scale} placeholder="ostrość" onChange={this.handleChange}/>
 <br/>         <input id="mySANDWICH" className="hidden" type="number" name="slices_of_bread" value={this.state.slices_of_bread} placeholder="ilość kromek" onChange={this.handleChange}/>
               <br/>
-              <input id="myPIZZA" className="hidden" type="number" name="no_of_slices" value={this.state.no_of_slices} placeholder="ilość kawałków" onChange={this.handleChange}/>
+              <div id="myPIZZA" className="hidden"><label  htmlFor="no_of_slices">Ilość kawałków</label>
+              <input  type="number" min="0" name="no_of_slices" value={this.state.no_of_slices} placeholder="ilość kawałków" onChange={this.handleChange}/>
               <br/>
-
+              <label  htmlFor="diameter">Średnica</label>
+              <input  type="number" step="any" name="diameter" value={this.state.diameter} placeholder="Średnica" onChange={this.handleChange}/>
+          </div>
               <button type="submit">Dodaj danie</button>
           </form>
         </div>
