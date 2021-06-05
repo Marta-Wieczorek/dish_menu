@@ -68,7 +68,7 @@ handleChange = (event) => {
               <br />
               <br />
               <br />
-
+<label htmlFor="type">Wybierz typ dania:</label><br/>
               <select name="type" onChange={this.handleChange} required>
                   <option onClick={this.togglePizza} value="pizza">Pizza</option>
                   <option onClick={this.toggleSoup} value="soup">Soup</option>
@@ -77,13 +77,13 @@ handleChange = (event) => {
 <br/>
               <br/>
               <input id="mySOUP" className="hidden" type="number" min="0" max="10" step="1" name="spicinest_scale" value={this.state.spicinest_scale} placeholder="ostrość" onChange={this.handleChange}/>
-<br/>         <input id="mySANDWICH" className="hidden" type="number" name="slices_of_bread" value={this.state.slices_of_bread} placeholder="ilość kromek" onChange={this.handleChange}/>
+<br/>         <input id="mySANDWICH" className="hidden" type="number" min="0" name="slices_of_bread" value={this.state.slices_of_bread} placeholder="ilość kromek" onChange={this.handleChange}/>
               <br/>
-              <div id="myPIZZA" className="hidden"><label  htmlFor="no_of_slices">Ilość kawałków</label>
+              <div id="myPIZZA" className="hidden"><label  htmlFor="no_of_slices">Ilość kawałków</label><br/>
               <input  type="number" min="0" name="no_of_slices" value={this.state.no_of_slices} placeholder="ilość kawałków" onChange={this.handleChange}/>
               <br/>
-              <label  htmlFor="diameter">Średnica</label>
-              <input  type="number" step="any" name="diameter" value={this.state.diameter} placeholder="Średnica" onChange={this.handleChange}/>
+              <label  htmlFor="diameter">Średnica</label><br/>
+              <input  type="number" step="any" name="diameter" min="0" value={this.state.diameter} placeholder="Średnica" onChange={this.handleChange}/>
           </div>
               <button type="submit">Dodaj danie</button>
           </form>
