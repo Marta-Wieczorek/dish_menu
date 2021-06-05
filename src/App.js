@@ -41,10 +41,10 @@ handleChange = (event) => {
   render(){
     return (
         <div className="myStyle">
-          <h2 className="App-header">Kreator MENU</h2>
+          <h2 className="App-header">MENU Creator</h2>
 
           <form>
-            <label htmlFor="name">Nazwa dania:</label><br />
+            <label htmlFor="name">Dish Name:</label><br />
             <input
               type="text"
               name="name"
@@ -54,7 +54,7 @@ handleChange = (event) => {
               required
           />
             <br />
-            <br /><label htmlFor="preparation_time">Czas przygotowania:</label> <br />
+            <br /><label htmlFor="preparation_time">Preparation Time:</label> <br />
               <input
                   type="time"
                   name="preparation_time"
@@ -68,7 +68,7 @@ handleChange = (event) => {
               <br />
               <br />
               <br />
-<label htmlFor="type">Wybierz typ dania:</label><br/>
+<label htmlFor="type">Dish Type:</label><br/>
               <select name="type" onChange={this.handleChange} required>
                   <option onClick={this.togglePizza} value="pizza">Pizza</option>
                   <option onClick={this.toggleSoup} value="soup">Soup</option>
@@ -76,16 +76,19 @@ handleChange = (event) => {
               </select>
 <br/>
               <br/>
-              <input id="mySOUP" className="hidden" type="number" min="0" max="10" step="1" name="spicinest_scale" value={this.state.spicinest_scale} placeholder="ostrość" onChange={this.handleChange}/>
-<br/>         <input id="mySANDWICH" className="hidden" type="number" min="0" name="slices_of_bread" value={this.state.slices_of_bread} placeholder="ilość kromek" onChange={this.handleChange}/>
+              <div id="mySOUP" className="hidden" ><label htmlFor="spicinest_scale">Spacinest scale</label><br/>
+                  <input type="number" min="0" max="10" step="1" name="spicinest_scale" value={this.state.spicinest_scale} placeholder="spicinest" onChange={this.handleChange}/></div>
+
+<br/>         <div id="mySANDWICH" className="hidden"><label htmlFor="slices_of_bread">Slices of bread</label><br/>
+              <input type="number" min="0" name="slices_of_bread" value={this.state.slices_of_bread} placeholder="slices of bread" onChange={this.handleChange}/>
+          </div><br/>
+              <div id="myPIZZA" className="hidden"><label  htmlFor="no_of_slices">Number of Slices</label><br/>
+              <input  type="number" min="0" name="no_of_slices" value={this.state.no_of_slices} placeholder="No of Slices" onChange={this.handleChange}/>
               <br/>
-              <div id="myPIZZA" className="hidden"><label  htmlFor="no_of_slices">Ilość kawałków</label><br/>
-              <input  type="number" min="0" name="no_of_slices" value={this.state.no_of_slices} placeholder="ilość kawałków" onChange={this.handleChange}/>
-              <br/>
-              <label  htmlFor="diameter">Średnica</label><br/>
-              <input  type="number" step="any" name="diameter" min="0" value={this.state.diameter} placeholder="Średnica" onChange={this.handleChange}/>
+              <label  htmlFor="diameter">Diameter</label><br/>
+              <input  type="number" step="any" name="diameter" min="0" value={this.state.diameter} placeholder="Diameter" onChange={this.handleChange}/>
           </div>
-              <button type="submit">Dodaj danie</button>
+              <button type="submit">Add dish to menu</button>
           </form>
         </div>
     )
