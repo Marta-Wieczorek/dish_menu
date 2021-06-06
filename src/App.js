@@ -10,7 +10,7 @@ class App extends Component {
     "preparation_time": 0,
     "type": "",
     "diameter":0,
-    "spicinest_scale":0,
+    "spiciness_scale":0,
     "slices_of_bread":0,
   }
 
@@ -35,22 +35,22 @@ class App extends Component {
         this.setState({
             "no_of_slices": 0,
             "diameter":0,
-            "spicinest_scale":0,
+            "spiciness_scale":0,
             "slices_of_bread":0,
         })
     }
 
     handleSubmit = (event) => {
         event.preventDefault();
-        fetch('http://localhost:3000/questions', {
+        fetch('https://frosty-wood-6558.getsandbox.com:443/dishes', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
                         'Content-Type': 'application/json',
             },
-            body: JSON.stringify(this.state)
-        }).then(responce => {
-            console.log(responce)
+            body: JSON.stringify(this.switchDish())
+        }).then(response => {
+            console.log(response)
         }).catch(error => {
             console.log(error)
         })
@@ -59,7 +59,7 @@ class App extends Component {
             "preparation_time": 0,
             "type": "",
             "diameter":0,
-            "spicinest_scale":0,
+            "spiciness_scale":0,
             "slices_of_bread":0,});
     }
 
@@ -75,8 +75,8 @@ class App extends Component {
             </div>;
         } if (dish === "soup" ){
             // console.log('soup');
-            return  <div className="showed" ><label htmlFor="spicinest_scale">Spacinest scale</label><br/>
-                <input type="number" min="0" max="10" step="1" name="spicinest_scale" value={this.state.spicinest_scale} placeholder="spicinest" onChange={this.handleChange}/></div>
+            return  <div className="showed" ><label htmlFor="spiciness_scale">Spaciness scale</label><br/>
+                <input type="number" min="0" max="10" step="1" name="spiciness_scale" value={this.state.spiciness_scale} placeholder="spiciness" onChange={this.handleChange}/></div>
                 ;
         }if (dish === "sandwich" ){
             // console.log('sandwich');
@@ -86,14 +86,41 @@ class App extends Component {
         }
     }
 
-
+    switchDish = () =>{
+        switch(dish) {
+            case "pizza": return(
+                {
+                    "name":this.state.name,
+                    "preparation_time":this.state.preparation_time,
+                    "type":"pizza",
+                    "no_of_slices":parseInt(this.state.no_of_slices),
+                    "diameter":parseFloat(this.state.diameter)
+                }
+            )
+            case "soup": return(
+                {
+                    "name":this.state.name,
+                    "prepatation_time":this.state.preparation_time,
+                    "type":"soup",
+                    "spaciness_scale":parseInt(this.state.spaciness_scale)
+                }
+            )
+            case "sandwich": return(
+                {
+                    "name":this.state.name,
+                    "preparation_time":this.state.preparation_time,
+                    "type":"sandwich",
+                    "slices_of_bread":parseInt(this.state.slices_of_bread)
+                }
+            )
+        }
+    }
 
 
 
 
   render(){
         this.conditional_input=this.AdditionalProperties();
-        console.log(this.conditional_input);
     return (
         <div className="myStyle">
           <h2 className="App-header">MENU Creator</h2>
@@ -114,9 +141,10 @@ class App extends Component {
                   type="time"
                   name="preparation_time"
                   step="2"
+                  min="1"
                   value={this.state.preparation_time}
                   onChange={this.handleChange}
-                  placeholder="0"
+                  placeholder="1"
                   required
                   />
               <br />
