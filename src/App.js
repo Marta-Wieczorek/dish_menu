@@ -65,23 +65,19 @@ class App extends Component {
 
     AdditionalProperties() {
         if (dish === "pizza") {
-            // console.log('pizza');
-
             return <div className="showed"><label  htmlFor="no_of_slices">Number of Slices</label><br/>
-                <input  type="number" min="0" name="no_of_slices" value={this.state.no_of_slices} placeholder="No of Slices" onChange={this.handleChange}/>
+                <input  type="number" min="1" name="no_of_slices" value={this.state.no_of_slices} placeholder="No of Slices" onChange={this.handleChange}/>
                 <br/>
                 <label  htmlFor="diameter">Diameter</label><br/>
-                <input  type="number" step="any" name="diameter" min="0" value={this.state.diameter} placeholder="Diameter" onChange={this.handleChange}/>
+                <input  type="number" step="any" name="diameter" min="0.01" value={this.state.diameter} placeholder="Diameter" onChange={this.handleChange}/>
             </div>;
         } if (dish === "soup" ){
-            // console.log('soup');
             return  <div className="showed" ><label htmlFor="spiciness_scale">Spaciness scale</label><br/>
-                <input type="number" min="0" max="10" step="1" name="spiciness_scale" value={this.state.spiciness_scale} placeholder="spiciness" onChange={this.handleChange}/></div>
+                <input type="number" min="1" max="10" step="1" name="spiciness_scale" value={this.state.spiciness_scale} placeholder="spiciness" onChange={this.handleChange}/></div>
                 ;
         }if (dish === "sandwich" ){
-            // console.log('sandwich');
             return  <div className="showed"><label htmlFor="slices_of_bread">Slices of bread</label><br/>
-                <input type="number" min="0" name="slices_of_bread" value={this.state.slices_of_bread} placeholder="slices of bread" onChange={this.handleChange}/>
+                <input type="number" min="1" name="slices_of_bread" value={this.state.slices_of_bread} placeholder="slices of bread" onChange={this.handleChange}/>
             </div>;
         }
     }
@@ -100,7 +96,7 @@ class App extends Component {
             case "soup": return(
                 {
                     "name":this.state.name,
-                    "prepatation_time":this.state.preparation_time,
+                    "preparation_time":this.state.preparation_time,
                     "type":"soup",
                     "spaciness_scale":parseInt(this.state.spaciness_scale)
                 }
@@ -112,6 +108,9 @@ class App extends Component {
                     "type":"sandwich",
                     "slices_of_bread":parseInt(this.state.slices_of_bread)
                 }
+            )
+            default:      return(
+                <p>Choose type of dish!</p>
             )
         }
     }
