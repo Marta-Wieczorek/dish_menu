@@ -72,7 +72,7 @@ class App extends Component {
                 <input  type="number" step="any" name="diameter" min="0.01" value={this.state.diameter} placeholder="Diameter" onChange={this.handleChange}/>
             </div>;
         } if (dish === "soup" ){
-            return  <div className="showed" ><label htmlFor="spiciness_scale">Spaciness scale</label><br/>
+            return  <div className="showed" ><label htmlFor="spiciness_scale">Spiciness scale</label><br/>
                 <input type="number" min="1" max="10" step="1" name="spiciness_scale" value={this.state.spiciness_scale} placeholder="spiciness" onChange={this.handleChange}/></div>
                 ;
         }if (dish === "sandwich" ){
@@ -98,7 +98,7 @@ class App extends Component {
                     "name":this.state.name,
                     "preparation_time":this.state.preparation_time,
                     "type":"soup",
-                    "spaciness_scale":parseInt(this.state.spaciness_scale)
+                    "spiciness_scale":parseInt(this.state.spiciness_scale)
                 }
             )
             case "sandwich": return(
