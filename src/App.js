@@ -42,7 +42,7 @@ class App extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        fetch('https://frosty-wood-6558.getsandbos.com:443/dishes', {
+        fetch('http://localhost:3000/questions', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -54,6 +54,13 @@ class App extends Component {
         }).catch(error => {
             console.log(error)
         })
+        this.setState({    "name": "",
+            "no_of_slices": 0,
+            "preparation_time": 0,
+            "type": "",
+            "diameter":0,
+            "spicinest_scale":0,
+            "slices_of_bread":0,});
     }
 
     AdditionalProperties() {
