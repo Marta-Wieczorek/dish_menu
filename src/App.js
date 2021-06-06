@@ -65,19 +65,49 @@ class App extends Component {
 
     AdditionalProperties() {
         if (dish === "pizza") {
-            return <div className="showed"><label  htmlFor="no_of_slices">Number of Slices</label><br/>
-                <input  type="number" min="1" name="no_of_slices" value={this.state.no_of_slices} placeholder="No of Slices" onChange={this.handleChange}/>
+            return <div className="showed">
+                <label  htmlFor="no_of_slices">Number of Slices:</label><br/>
+                <input
+                    type="number"
+                    min="1"
+                    name="no_of_slices"
+                    value={this.state.no_of_slices}
+                    placeholder="No of Slices"
+                    onChange={this.handleChange}/>
                 <br/>
-                <label  htmlFor="diameter">Diameter</label><br/>
-                <input  type="number" step="any" name="diameter" min="0.01" value={this.state.diameter} placeholder="Diameter" onChange={this.handleChange}/>
+                <label  htmlFor="diameter">Diameter:</label><br/>
+                <input
+                    type="number"
+                    step="any"
+                    name="diameter"
+                    min="0.01"
+                    value={this.state.diameter}
+                    placeholder="Diameter"
+                    onChange={this.handleChange}/>
             </div>;
         } if (dish === "soup" ){
-            return  <div className="showed" ><label htmlFor="spiciness_scale">Spiciness scale</label><br/>
-                <input type="number" min="1" max="10" step="1" name="spiciness_scale" value={this.state.spiciness_scale} placeholder="spiciness" onChange={this.handleChange}/></div>
-                ;
+            return  <div className="showed" >
+                <label htmlFor="spiciness_scale">Spiciness scale:</label><br/>
+                <input
+                    type="number"
+                    min="1"
+                    max="10"
+                    step="1"
+                    name="spiciness_scale"
+                    value={this.state.spiciness_scale}
+                    placeholder="spiciness"
+                    onChange={this.handleChange}/>
+            </div>;
         }if (dish === "sandwich" ){
-            return  <div className="showed"><label htmlFor="slices_of_bread">Slices of bread</label><br/>
-                <input type="number" min="1" name="slices_of_bread" value={this.state.slices_of_bread} placeholder="slices of bread" onChange={this.handleChange}/>
+            return  <div className="showed">
+                <label htmlFor="slices_of_bread">Slices of bread</label><br/>
+                <input
+                    type="number"
+                    min="1"
+                    name="slices_of_bread"
+                    value={this.state.slices_of_bread}
+                    placeholder="slices of bread"
+                    onChange={this.handleChange}/>
             </div>;
         }
     }
@@ -125,44 +155,44 @@ class App extends Component {
           <h2 className="App-header">MENU Creator</h2>
 
           <form onSubmit={this.handleSubmit}>
-            <label htmlFor="name">Dish Name:</label><br />
+            <label htmlFor="name">Dish Name:</label><br/>
             <input
-              type="text"
-              name="name"
-              value={this.state.name}
-              onChange={this.handleChange}
-              placeholder="enter dish name"
-              required
-          />
-            <br />
-            <br /><label htmlFor="preparation_time">Preparation Time:</label> <br />
-              <input
-                  type="time"
-                  name="preparation_time"
-                  step="2"
-                  min="1"
-                  value={this.state.preparation_time}
-                  onChange={this.handleChange}
-                  placeholder="1"
-                  required
-                  />
-              <br />
-              <br />
-              <br />
-              <br />
-<label htmlFor="type">Dish Type:</label><br/>
-              <select name="type" onChange={this.handleDishChange} required>
-                  <option value="pizza" >Pizza</option>
-                  <option value="soup">Soup</option>
-                  <option value="sandwich">Sandwich</option>
-              </select>
-              <br/>
-              <br/>
-              {this.conditional_input}
+                type="text"
+                name="name"
+                value={this.state.name}
+                onChange={this.handleChange}
+                placeholder="enter dish name"
+                required
+            />
+            <br/>
+            <br/>
+            <label htmlFor="preparation_time">Preparation Time:</label><br/>
+            <input
+                type="time"
+                name="preparation_time"
+                step="2"
+                min="1"
+                value={this.state.preparation_time}
+                onChange={this.handleChange}
+                placeholder="1"
+                required
+            />
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <label htmlFor="type">Dish Type:</label><br/>
+            <select name="type" onChange={this.handleDishChange} required>
+                <option value="pizza" >Pizza</option>
+                <option value="soup">Soup</option>
+                <option value="sandwich">Sandwich</option>
+            </select>
+            <br/>
+            <br/>
+            {this.conditional_input}
 
-<br/>
-
-              <button type="submit">Add dish to menu</button>
+            <br/>
+            <button type="submit">Add dish to menu</button>
           </form>
         </div>
     )
