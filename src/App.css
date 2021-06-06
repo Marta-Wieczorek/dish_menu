@@ -14,9 +14,6 @@ body{
   align-content: space-around;
 justify-content: center;}
 
-.hidden{
-  display:none;}
-
 .showed{
   border:1px black solid;
 }

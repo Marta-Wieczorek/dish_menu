@@ -40,6 +40,22 @@ class App extends Component {
         })
     }
 
+    handleSubmit = (event) => {
+        event.preventDefault();
+        fetch('https://frosty-wood-6558.getsandbos.com:443/dishes', {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                        'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(this.state)
+        }).then(responce => {
+            console.log(responce)
+        }).catch(error => {
+            console.log(error)
+        })
+    }
+
     AdditionalProperties() {
         if (dish === "pizza") {
             // console.log('pizza');
@@ -75,7 +91,7 @@ class App extends Component {
         <div className="myStyle">
           <h2 className="App-header">MENU Creator</h2>
 
-          <form>
+          <form onSubmit={this.handleSubmit}>
             <label htmlFor="name">Dish Name:</label><br />
             <input
               type="text"
