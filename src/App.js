@@ -105,7 +105,7 @@ class App extends Component {
               name="name"
               value={this.state.name}
               onChange={this.handleChange}
-              placeholder="Wpisz nazwę dania"
+              placeholder="enter dish name"
               required
           />
             <br />
