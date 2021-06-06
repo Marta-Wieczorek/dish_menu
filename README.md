@@ -73,8 +73,8 @@ Now, just refresh the list of our repositories and install Yarn:
 sudo apt-get update && sudo apt-get install yarn
 ```
 
-Another thing is to install the React.js library using the create-react-app. Detailed installation instructions in the link.
-* [create-react-app] (setup.md)
+Another thing is to install the React.js library using the create-react-app.
+* [create-react-app]
 
 
 
@@ -91,7 +91,7 @@ In the case of problems with the version of packages after cloning, you can dele
 
 * [NVM] (https://github.com/creationix/nvm)
 * [yarn] (https://yarnpkg.com/lang/en/docs/install/#debian-stable)
-* [create-react-app] (setup.md)
+* [create-react-app]
 
 
 
