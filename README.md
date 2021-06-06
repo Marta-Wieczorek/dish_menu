@@ -87,7 +87,7 @@ yarn start
 In the case of problems with the version of packages after cloning, you can delete the file [yarn.lock] (yarn.lock)
 
 
-## Built using:
+## Build using:
 
 * [NVM] (https://github.com/creationix/nvm)
 * [yarn] (https://yarnpkg.com/lang/en/docs/install/#debian-stable)
