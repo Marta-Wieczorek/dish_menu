@@ -1,22 +1,36 @@
 @import url('https://fonts.googleapis.com/css?family=Encode+Sans+Semi+Condensed:400,700,900&subset=latin-ext');
+
 .App-header {
-  background-color: #282c34;
+  background-color: #518a5a;;
   color: white;
   display: block;
+  border-radius:5px 5px 0 0;
 }
+
 body{
   font-family: 'Encode Sans Semi Condensed', sans-serif;
   width:100%;
   background-color:beige;
   padding-top:40px;
   display: flex;
-  justify-items: center;
-  align-content: space-around;
-justify-content: center;}
+  justify-content: center;
+}
 
 .showed{
-  border:1px black solid;
+  border:1px #518a5a solid;
+  border-radius:5px 5px 0 0;
+  padding:5px;
 }
-.myStyle{
 
+.submitButton{
+  background-color: #518a5a;
+  border-radius: 5px;
+  width: 223px;
+  text-transform: uppercase;
+  color:white;
+  text-align: center;
+}
+
+.myStyle{
+  margin:auto;
 }

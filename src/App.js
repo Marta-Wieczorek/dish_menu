@@ -182,7 +182,7 @@ class App extends Component {
             <br/>
             <br/>
             <label htmlFor="type">Dish Type:</label><br/>
-            <select name="type" onChange={this.handleDishChange} required>
+            <select className="submitButton" name="type" onChange={this.handleDishChange} required>
                 <option value="pizza" >Pizza</option>
                 <option value="soup">Soup</option>
                 <option value="sandwich">Sandwich</option>
@@ -192,7 +192,7 @@ class App extends Component {
             {this.conditional_input}
 
             <br/>
-            <button type="submit">Add dish to menu</button>
+            <button className="submitButton" type="submit">ADD</button>
           </form>
         </div>
     )
